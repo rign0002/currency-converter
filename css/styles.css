@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+:root {
+    --fontOne: 4.209rem;
+    --fontTwo: 3.157rem;
+    --fontThree: 2.369rem;
+    --fontFour: 1.77rem;
+    --fontFive: 1.33rem;
+    --fontSix: 1rem;
+    --fontSeven: 0.75rem;
+}
+
+body {
+    background-color: hsl(75deg, 10%, 8%);
+}
+
+.container {
+    user-select: none;
+}
+
+/***********************
+        Header
+***********************/
+
+.header {
+    text-align: center;
+    background-color: hsl(75deg, 10%, 8%);
+    border-bottom: 1px solid rgba(100, 100, 100, 0.7);
+}
+
+.header h1 {
+    color: white;
+    font-size: var(--fontOne);
+    text-shadow: 0px 0px 8px hsl(75deg, 100%, 60%);
+}
+
+/***********************
+        Main
+***********************/
+.content {
+    width: 85%;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.date {
+    text-align: right;
+    padding: 1%;
+    margin-right: 4.8%;
+    color: rgb(175, 175, 175);
+    font-weight: 900;
+    font-size: var(--fontSeven);
+}
+
+#favourites-header {
+    color: white;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.background {
+    width: 90%;
+    margin: auto;
+    background-color: hsl(75deg, 0%, 30%);
+    border-radius: 5px;
+    min-height: 300px;
+    position: relative;
+}
+    
+.favourite {
+    display: inline-block;
+    border: 1px solid hsl(75deg, 100%, 50%);
+    position: relative;
+    width: 22rem;
+    border-radius: 5px;
+    margin: 1% 0 1% 2%;
+    cursor: pointer;
+}
+
+#favourites {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.favourite:last-child{
+    margin-bottom: 15%;
+}
+
+.flag {
+    display: inline;
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 1%;
+    border: 1px solid white;
+    vertical-align: top;
+}
+
+.info {
+    display: inline-block;
+    color: hsl(200deg, 95%, 95%);
+    padding: 1% 0;
+}
+
+.input {
+    width: 110%;
+}
+
+.input span {
+    font-size: var(--fontFive);
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    width: 4rem;
+}
+
+.input input {
+    font: var(--fontSix);
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: hsl(200deg, 95%, 95%);
+    padding: 1%;
+    margin-bottom: 5%;
+    display: inline;
+}
+
+.currency-name {
+    font-size: var(--fontSix);
+    padding-left: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 5%;
+}
+
+.base-currency-rate {
+    font-size: var(--fontSeven);
+    padding-left: 2.5rem;
+    font-weight: 900;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+.add-currency-btn {
+    display: block;
+    margin: auto;
+    padding: 15px;
+    border-radius: 2px;
+    font-size: var(--fontSix);
+    cursor: pointer;
+    width: 100%;
+    background-color: hsl(75deg, 100%, 45%);
+    color: rgb(25, 25, 25);
+    font-weight: 550;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid black;
+}
+
+.add-currency-btn i {
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+    font-size: var(--fontFour);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.add-currency-list {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    background-color: rgb(241, 241, 241);
+    color: rgb(50, 50, 50);
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    overflow-y: auto;
+    transition: all 0.3s;
+}
+
+.add-currency-list li {
+    list-style-type: none;
+    padding: 0.7rem;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.add-currency-list li .flag {
+    vertical-align: middle;
+    width: 3rem;
+    height: 2rem;
+}
+
+.add-currency-list li span {
+    margin-left: 1rem;
+    font-weight: 900;
+}
+
+.add-currency-list .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.add-currency-btn.open i {
+    opacity: 1;
+}
+
+.add-currency-btn.open {
+    background-color: hsl(75deg, 80%, 35%);
+}
+
+.add-currency-btn.open + .add-currency-list {
+    height: 90%;
+    opacity: 1;
+}
+
+.add-currency-btn.open + .add-currency-list li:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.base-currency {
+    cursor: pointer;
+    background-color: hsl(75deg, 20%, 30%);
+}
+
+
+
+
+
+
+
+
+
+/***********************
+    Media Queries
+***********************/
+
+@media (max-width: 650px) {
+    .header h1 {
+        font-size: var(--fontThree);
+    }
+}

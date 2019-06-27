@@ -298,15 +298,7 @@ body {
 }
 
 @media (max-width: 600px) {
-    html {
-        font-size: 12px;
-    }
-
     .header h1 {
         font-size: var(--fontTwo);
-    }
-
-    .favourite {
-        width: 23.5rem;
     }
 }

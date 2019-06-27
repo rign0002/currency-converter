@@ -228,6 +228,13 @@ body {
     text-align: center;
 }
 
+#search-button {
+    color: rgb(100, 100, 100);
+    font-size: var(--fontFive);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 .found {
     background-color: hsl(75deg, 50%, 50%);
 }

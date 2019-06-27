@@ -181,6 +181,7 @@ const populateAddCurrencyList = () => {
 const addEventListeners = () => {    
     document.querySelector('.add-currency-btn').addEventListener('click', addCurrencyBtn)
     document.querySelector('#search-field').addEventListener('keydown', searchCurrencies)
+    document.querySelector('#search-button').addEventListener('click', searchCurrencies)
 }
 
 const addCurrencyBtn = ev => {
@@ -189,14 +190,18 @@ const addCurrencyBtn = ev => {
 }
 
 const searchCurrencies = ev => {
-    const inputValue = ev.target.value
+    let inputValue = ev.target.value
     const elementsToIterate = document.querySelectorAll('.add-currency-list li')
     const currenciesArray = []
     const matches = []
     
     removeClassAndParagraph()
     
-    if (ev.key === 'Enter' && inputValue.length > 0) {
+    if (!inputValue) {
+        inputValue = ev.target.previousSibling.value
+    }
+    
+    if (ev.key === 'Enter' || ev.type === 'click' && inputValue.length > 0) {
         elementsToIterate.forEach(elem => {
             currenciesArray.push(elem.innerText)
         })

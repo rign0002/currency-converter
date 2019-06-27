@@ -90,16 +90,16 @@ const createCards = favs => {
         let p1 = document.createElement('p')
         p1.classList.add('input')
         
-        let span1 = document.createElement('span')
-        span1.classList.add('currency-symbol')
-        span1.innerHTML = fav.symbol
-        
         let input = document.createElement('input')
         input.setAttribute('placeholder', '0.00')
         input.setAttribute('value', '')
         input.addEventListener('input', updateFavouriteCurrenciesInputs)
         input.addEventListener('focusout', validateAndCleanInput)
         input.addEventListener('keydown', addEnterFunctionality)
+        
+        let span1 = document.createElement('span')
+        span1.classList.add('currency-symbol')
+        span1.innerHTML = fav.symbol
         
         let p2 = document.createElement('p')
         p2.classList.add('currency-name')
@@ -115,8 +115,8 @@ const createCards = favs => {
         span2.addEventListener('click', removeFromLocalStorage)
 
         
-        p1.appendChild(span1)
         p1.appendChild(input)
+        p1.appendChild(span1)
         
         div.appendChild(p1)
         div.appendChild(p2)
@@ -150,7 +150,15 @@ const populateAddCurrencyList = () => {
         addCurrencyList.removeChild(addCurrencyList.querySelector('li'))
     }
     
-//    currencies.sort((a, b) => (a.name > b.name) ? 1 : -1)
+    
+    let div = document.createElement('div')
+    let p = document.createElement('p')
+    let searchBar = document.createElement('input')
+    
+    div.appendChild(p)
+    div.appendChild(searchBar)
+    
+    addCurrencyList.appendChild(div)
     
     currencies.forEach(currency => {
         

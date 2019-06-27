@@ -115,10 +115,10 @@ body {
 .info {
     display: inline-flex;
     color: hsl(200deg, 95%, 95%);
-    padding: 1% 0 0 2%;
+    padding: 1% 0 0 4%;
     flex-direction: column;
     margin-right: 10%;
-    text-align: center
+    width: 100%;
 }
 
 .input {
@@ -131,7 +131,7 @@ body {
     display: inline;
     margin: auto;
     text-align: center;
-    margin: 0 10%;
+    margin: 0 5%;
 }
 
 .input input {
@@ -291,7 +291,7 @@ body {
 /***********************
     Media Queries
 ***********************/
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
     html {
         font-size: 14px;
     }

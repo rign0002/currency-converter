@@ -1,6 +1,6 @@
 'use strict'
 
-import currencies from "./currencies.js";
+import currencies from './currencies.js';
 
 // GLOBALS
 
@@ -72,7 +72,7 @@ const createCards = favs => {
     favs.forEach(fav =>{
         const exchangeRate = fav.abbreviation == baseCurrencyRate ? 1 : (fav.rate/baseCurrencyRate).toFixed(4)
         
-        let li = document.createElement('li')
+        const li = document.createElement('li')
         li.classList.add('favourite')
         li.setAttribute('id', fav.abbreviation)
         li.addEventListener('click', setBaseCurrency)
@@ -80,36 +80,36 @@ const createCards = favs => {
             li.classList.add('base-currency')
         }
         
-        let img = document.createElement('img')
+        const img = document.createElement('img')
         img.src = fav.flag
         img.classList.add('flag')
         
-        let div = document.createElement('div')
+        const div = document.createElement('div')
         div.classList.add('info')
         
-        let p1 = document.createElement('p')
+        const p1 = document.createElement('p')
         p1.classList.add('input')
         
-        let input = document.createElement('input')
+        const input = document.createElement('input')
         input.setAttribute('placeholder', '0.00')
         input.setAttribute('value', '')
         input.addEventListener('input', updateFavouriteCurrenciesInputs)
         input.addEventListener('focusout', validateAndCleanInput)
         input.addEventListener('keydown', addEnterFunctionality)
         
-        let span1 = document.createElement('span')
+        const span1 = document.createElement('span')
         span1.classList.add('currency-symbol')
         span1.innerHTML = fav.symbol
         
-        let p2 = document.createElement('p')
+        const p2 = document.createElement('p')
         p2.classList.add('currency-name')
         p2.innerHTML = `${fav.abbreviation} - ${fav.name}`
         
-        let p3 = document.createElement('p')
+        const p3 = document.createElement('p')
         p3.classList.add('base-currency-rate')
         p3.innerHTML = `1 ${baseCurrency} = ${exchangeRate} ${fav.abbreviation}`
         
-        let span2 = document.createElement('span')
+        const span2 = document.createElement('span')
         span2.classList.add('close')
         span2.innerHTML = 'x'
         span2.addEventListener('click', removeFromLocalStorage)
@@ -146,23 +146,13 @@ const populateAddCurrencyList = () => {
     
     const addCurrencyList = document.querySelector('.add-currency-list')
     
-    while(addCurrencyList.hasChildNodes()){
+    while(addCurrencyList.querySelector('li')) {
         addCurrencyList.removeChild(addCurrencyList.querySelector('li'))
     }
     
-    
-//    let div = document.createElement('div')
-//    let p = document.createElement('p')
-//    let searchBar = document.createElement('input')
-//    
-//    div.appendChild(p)
-//    div.appendChild(searchBar)
-//    
-//    addCurrencyList.appendChild(div)
-    
     currencies.forEach(currency => {
         
-        let li = document.createElement('li')
+        const li = document.createElement('li')
         li.setAttribute('data-currency', currency.abbreviation)
         li.addEventListener('click', addCurrencyToFavourites)
         
@@ -172,11 +162,11 @@ const populateAddCurrencyList = () => {
             }
         })
         
-        let img = document.createElement('img')
+        const img = document.createElement('img')
         img.src = currency.flag
         img.classList.add('flag')
         
-        let span = document.createElement('span')
+        const span = document.createElement('span')
         span.innerHTML = `${currency.abbreviation} - ${currency.name} &nbsp;(${currency.symbol})`
         
         li.appendChild(img)
@@ -190,11 +180,56 @@ const populateAddCurrencyList = () => {
 
 const addEventListeners = () => {    
     document.querySelector('.add-currency-btn').addEventListener('click', addCurrencyBtn)
+    document.querySelector('#search-field').addEventListener('keydown', searchCurrencies)
 }
 
 const addCurrencyBtn = ev => {
     document.querySelector('.add-currency-btn').classList.toggle('open')
     populateAddCurrencyList()
+}
+
+const searchCurrencies = ev => {
+    const inputValue = ev.target.value
+    const elementsToIterate = document.querySelectorAll('.add-currency-list li')
+    const currenciesArray = []
+    const matches = []
+    
+    removeClassAndParagraph()
+    
+    if (ev.key === 'Enter' && inputValue.length > 0) {
+        elementsToIterate.forEach(elem => {
+            currenciesArray.push(elem.innerText)
+        })
+        
+        for(let currenciesHTML of currenciesArray) {
+            if (currenciesHTML.toLowerCase().includes(inputValue.toLowerCase())) {
+                matches.push(currenciesHTML)
+            }
+        }
+        
+        const p = document.createElement('p')
+        p.innerHTML = `${matches.length} Results Found`
+        p.className = 'results'
+        
+        document.querySelector('.search-div').appendChild(p)
+        
+        elementsToIterate.forEach(elem => {
+            if (matches.includes(elem.innerText) && !(elem.className == 'disabled')) {
+                elem.classList.add('found')
+                elem.scrollIntoView({behavior: 'smooth', block: 'nearest'})
+            }
+        })
+    }
+}
+
+const removeClassAndParagraph = () => {
+    while (document.querySelector('.add-currency-list .found')){
+        document.querySelector('.found').classList.remove('found')
+    }
+    
+    if(document.querySelector('.search-div .results')) {
+        document.querySelector('.search-div').removeChild(document.querySelector('.search-div .results'))
+    }
 }
 
 const removeFromLocalStorage = ev => {

@@ -222,6 +222,7 @@ body {
     border: 1px solid hsl(75deg, 50%, 50%);
     padding: 1%;
     margin: 1%;
+    font-size: var(--fontSix);
 }
 
 #search-field::placeholder {
@@ -337,5 +338,10 @@ body {
 @media (max-width: 600px) {
     .header h1 {
         font-size: var(--fontTwo);
+    }
+}
+@media (max-width: 500px) {
+    html {
+        font-size: 11px;
     }
 }

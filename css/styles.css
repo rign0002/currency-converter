@@ -264,8 +264,26 @@ body {
     Media Queries
 ***********************/
 
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .favourite {
+        width: 23.5rem;
+    }
+}
+/*
 @media (max-width: 650px) {
     .header h1 {
         font-size: var(--fontThree);
     }
 }
+*/

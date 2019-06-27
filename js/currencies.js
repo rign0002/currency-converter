@@ -3,7 +3,7 @@ const currencies = [
     name: 'US Dollar',
     abbreviation: 'USD',
     symbol: '&#36;',
-    flag: '../img/us.gif' || /currency-converter/img/us.gif
+    flag: '../img/us.gif' || '/currency-converter/img/us.gif'
   },
   {
     name: 'Euro',

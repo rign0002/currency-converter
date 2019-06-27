@@ -85,13 +85,15 @@ body {
 }
 
 .favourite {
-    display: inline-block;
+    display: inline-grid;
     border: 1px solid hsl(75deg, 100%, 50%);
     position: relative;
-    width: 22rem;
     border-radius: 5px;
     margin: 1% 0 1% 2%;
     cursor: pointer;
+    grid-template-areas: "a b c";
+    grid-template-columns: 15% 70% 15%;
+    max-width: 350px;
 }
 
 #favourites {
@@ -104,23 +106,19 @@ body {
 }
 
 .flag {
-    display: inline;
     width: 60px;
     height: 40px;
     border-radius: 5px;
-    margin: 1%;
+    margin: 5%;
     border: 1px solid white;
-    vertical-align: top;
+    grid-area: a;
 }
 
 .info {
-    display: inline-block;
+    display: inline;
     color: hsl(200deg, 95%, 95%);
-    padding: 1% 0;
-}
-
-.input {
-    width: 110%;
+    padding: 1% 0 0 2%;
+    grid-area: b;
 }
 
 .input span {
@@ -140,6 +138,7 @@ body {
     padding: 1%;
     margin-bottom: 5%;
     display: inline;
+    width: 70%;
 }
 
 .currency-name {
@@ -156,13 +155,12 @@ body {
 }
 
 .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 0.5rem;
+    text-align: right;
+    margin-right: 10%;
     font-size: 1.5rem;
     color: #666;
     cursor: pointer;
+    grid-area: c;
 }
 
 .close:hover {

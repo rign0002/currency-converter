@@ -151,14 +151,14 @@ const populateAddCurrencyList = () => {
     }
     
     
-    let div = document.createElement('div')
-    let p = document.createElement('p')
-    let searchBar = document.createElement('input')
-    
-    div.appendChild(p)
-    div.appendChild(searchBar)
-    
-    addCurrencyList.appendChild(div)
+//    let div = document.createElement('div')
+//    let p = document.createElement('p')
+//    let searchBar = document.createElement('input')
+//    
+//    div.appendChild(p)
+//    div.appendChild(searchBar)
+//    
+//    addCurrencyList.appendChild(div)
     
     currencies.forEach(currency => {
         

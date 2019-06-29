@@ -1,12 +1,18 @@
 'use strict'
 
-import currencies from "./currencies.js";
+import currencies from './currencies.js';
 
 
 document.addEventListener('DOMContentLoaded', init)
 
 function init() {
+    addEventListeners()
     copyrightMessage()
+}
+
+
+const addEventListeners = () => {
+    
 }
 
 const copyrightMessage = () => {

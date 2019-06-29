@@ -245,7 +245,7 @@ body {
     top: 30%;
     right: 10px;
     font-size: var(--fontSeven);
-    
+
 }
 
 .add-currency-list li {
@@ -297,17 +297,68 @@ body {
 /***********************
         Exchange
 ***********************/
+#exchange-header {
+    text-align: center;
+    color: white;
+    margin-top: 7%;
+    font-size: var(--fontThree);
+    text-shadow: 0px 0px 5px hsl(75deg, 50%, 50%);
+}
+
 .exchange {
     min-height: 150px;
     width: 90%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     background-color: hsl(75deg 0% 30%);
     border-radius: 5px;
 }
 
+.exchange-form {
+    padding: 15px 0;
+    display: flex;
+}
 
+.div-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+}
 
+.equals {
+    font-size: var(--fontTwo);
+    color: white;
+    align-self: flex-end;
+    padding-top: 8%;
+}
+
+.btn-form {
+    margin-bottom: 6%;
+    padding: 3%;
+    border-radius: 5px;
+    background: ;
+    border: 3px solid hsl(75deg, 100%, 45%);
+    cursor: pointer;
+    font-size: var(--fontFive);
+    position: relative;
+}
+
+.input-form {
+    padding: 2%;
+    font-size: var(--fontFour);
+    border-radius: 5px;
+    border: 3px solid white;
+    background: transparent;
+    color: white;
+}
+
+.fa-angle-down {
+    font-size: var(--fontFour);
+    position: absolute;
+    right: 3px;
+    color: rgb(50, 50, 50);
+}
 
 
 
@@ -317,12 +368,21 @@ body {
 /***********************
         Footer
 ***********************/
-#copyright {
-    font-size: var(--fontSeven);
+footer {
+    margin-top: 10%;
     color: white;
     text-align: center;
+}
+
+#exchange-API {
+    width: 8%;
+    border-radius: 50%;
+    margin: 1%;
+}
+
+#copyright {
+    font-size: var(--fontSeven);
     padding: 0.5%;
-    margin-top: 10%;
 }
 
 
@@ -340,6 +400,7 @@ body {
         font-size: var(--fontTwo);
     }
 }
+
 @media (max-width: 500px) {
     html {
         font-size: 11px;

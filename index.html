@@ -23,12 +23,28 @@
                    </div>
                </ul>
             </div>
+            <h1 id="exchange-header">Quick Exchange</h1>
             <div class="exchange">
-                <form>
-                </form>
+               <form class="exchange-form">
+                   <div class="div-form">
+                        <button class="btn-form" id="first-btn">Euro<i class="fas fa-angle-down"></i></button>
+                        <input type="number" class="input-form" placeholder="0.00" id="first-input">
+                   </div>
+                   <div class="equals">
+                       <p>=</p>
+                   </div>
+                   <div class="div-form">
+                        <button class="btn-form" id="second-btn">USD<i class="fas fa-angle-down"></i></button>
+                        <input type="number" class="input-form" placeholder="0.00" id="second-input">
+                   </div>
+               </form>
             </div>
        </main>
         <footer>
+            <div id="footer-div">
+                <p>Powered By</p>
+                <a href="https://exchangeratesapi.io/" target="_blank"><img src="img/api.svg" alt="exchange rates API logo" id="exchange-API"></a>
+            </div>
             <p id="copyright"></p>
         </footer>
    </div>

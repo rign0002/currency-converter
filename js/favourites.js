@@ -187,6 +187,7 @@ const addEventListeners = () => {
 const addCurrencyBtn = ev => {
     document.querySelector('.add-currency-btn').classList.toggle('open')
     populateAddCurrencyList()
+    document.querySelector('#search-field').value = ''
 }
 
 const searchCurrencies = ev => {

@@ -197,19 +197,6 @@ body {
     transition: all 0.3s;
 }
 
-.add-currency-list {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    background-color: rgb(241, 241, 241);
-    color: rgb(50, 50, 50);
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    overflow-y: auto;
-    transition: all 0.3s;
-}
-
 .search-div {
     text-align: center;
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -248,6 +235,19 @@ body {
 
 }
 
+.add-currency-list {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    background-color: rgb(241, 241, 241);
+    color: rgb(50, 50, 50);
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    overflow-y: auto;
+    transition: all 0.3s;
+}
+
 .add-currency-list li {
     list-style-type: none;
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -266,12 +266,12 @@ body {
     font-weight: 900;
 }
 
-.add-currency-list .disabled {
+.disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    cursor: not-allowed !important; 
 }
 
-.add-currency-btn.open i {
+.open i {
     opacity: 1;
 }
 
@@ -324,44 +324,127 @@ body {
     flex-direction: column;
     width: 40%;
     margin: auto;
+    position: relative;
 }
 
-.equals {
+.text-form {
+    display: flex;
+    flex-direction: column;
     font-size: var(--fontTwo);
-    color: white;
-    align-self: flex-end;
-    padding-top: 8%;
+    color: hsl(75deg, 100%, 45%);
+    text-align: center;
+}
+
+.text-form i {
+    height: 50px;
+}
+
+.text-form p {
+    margin-top: 10px;
+    height: 50px;
 }
 
 .btn-form {
-    margin-bottom: 6%;
-    padding: 3%;
+    padding: 5px;
     border-radius: 5px;
-    background: ;
     border: 3px solid hsl(75deg, 100%, 45%);
     cursor: pointer;
     font-size: var(--fontFive);
     position: relative;
+    height: 50px;
 }
 
-.input-form {
-    padding: 2%;
-    font-size: var(--fontFour);
+.btn-img {
     border-radius: 5px;
-    border: 3px solid white;
-    background: transparent;
-    color: white;
+    border: 1px solid rgb(150, 150, 150);
+    height: 33px;
+    width: 60px;
+    float: left;
+}
+
+.btn-currency-symbol {
+    font-size: var(--fontSeven);
+    vertical-align: top;
+}
+
+.btn-currency-name {
+    font-size: var(--fontSeven);
+    display: block;
+    transform: translateY(-4px);
 }
 
 .fa-angle-down {
-    font-size: var(--fontFour);
     position: absolute;
     right: 3px;
     color: rgb(50, 50, 50);
 }
 
+.fa-angle-down:hover {
+    color: rgb(175, 175, 175);
+}
 
+.input-form {
+    margin-top: 20px;
+    padding: 2%;
+    font-size: var(--fontFour);
+    border-radius: 5px;
+    border: 3px solid hsl(75deg, 100%, 45%);
+    background: transparent;
+    color: white;
+    height: 50px;
+}
 
+.currency-list {
+    list-style-type: none;
+    position: absolute;
+    top: 42%;
+    width: 100%;
+    max-height: 300px;
+    transition: all 0.3s;
+    background-color: rgb(241, 241, 241);
+    height: 0;
+    overflow-y: auto;
+    opacity: 0;
+    transform: all 0.25s;
+}
+
+.currency-li {
+    display: grid;
+    border-radius: 1px;
+    grid-template-columns: 35% 65%;
+    grid-template-areas: "a b" "a c";
+    padding: 2%;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    color: rgb(75, 75, 75);
+}
+
+.currency-li:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200); 
+}
+
+.btn-form.open + .currency-list {
+    opacity: 1; 
+    height: 300px;
+}
+
+.currency-list-img {
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid white;
+    grid-area: a;
+}
+
+.currency-abbreviation {
+    font-size: var(--fontSeven);
+    grid-area: b;
+}
+
+.currency-full-name {
+    font-size: var(--fontSeven);
+    grid-area: c;
+}
 
 
 
@@ -369,7 +452,7 @@ body {
         Footer
 ***********************/
 footer {
-    margin-top: 10%;
+    margin-top: 20%;
     color: white;
     text-align: center;
 }
@@ -404,5 +487,8 @@ footer {
 @media (max-width: 500px) {
     html {
         font-size: 11px;
+    }
+    .text-form {
+        margin-top: 8px;
     }
 }

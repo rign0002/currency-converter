@@ -27,14 +27,27 @@
             <div class="exchange">
                <form class="exchange-form">
                    <div class="div-form">
-                        <button class="btn-form" id="first-btn">Euro<i class="fas fa-angle-down"></i></button>
+                        <button class="btn-form" id="first-btn">
+                            <i class="fas fa-angle-down"></i>
+                            <img src="img/eu.gif" class="btn-img">
+                            <span class="btn-currency-symbol">EUR (€)</span>
+                            <span class="btn-currency-name">Euro</span>
+                        </button>
+                        <ul class="currency-list"></ul>
                         <input type="number" class="input-form" placeholder="0.00" id="first-input">
                    </div>
-                   <div class="equals">
+                   <div class="text-form">
+                       <i class="fas fa-long-arrow-alt-right"></i>
                        <p>=</p>
                    </div>
                    <div class="div-form">
-                        <button class="btn-form" id="second-btn">USD<i class="fas fa-angle-down"></i></button>
+                        <button class="btn-form" id="second-btn">
+                            <i class="fas fa-angle-down"></i>
+                            <img src="img/us.gif" class="btn-img">
+                            <span class="btn-currency-symbol">USD ($)</span>
+                            <span class="btn-currency-name">US Dollar</span>
+                            </button>
+                        <ul class="currency-list"></ul>
                         <input type="number" class="input-form" placeholder="0.00" id="second-input">
                    </div>
                </form>

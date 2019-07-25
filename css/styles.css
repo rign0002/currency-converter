@@ -59,7 +59,7 @@ body {
 .content {
     width: 85%;
     margin: auto;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 .date {
@@ -465,7 +465,7 @@ body {
         Footer
 ***********************/
 footer {
-    margin-top: 20%;
+    margin-top: 10%;
     color: white;
     text-align: center;
 }

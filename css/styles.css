@@ -124,13 +124,12 @@ body {
 .input {
     display: flex;
     margin-bottom: 5%;
+    margin-right: 5px;
 }
 
 .input span {
     font-size: var(--fontFive);
-    display: inline;
-    margin: auto;
-    text-align: center;
+    width: 20px;
     margin: 0 5%;
 }
 

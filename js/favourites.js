@@ -1,6 +1,6 @@
 'use strict'
 
-import currencies from './currencies.js';
+import currencies from './currencies.js'
 
 // GLOBALS
 
@@ -159,6 +159,7 @@ const populateAddCurrencyList = () => {
         document.querySelectorAll('.favourite').forEach(elem => {
             if (elem.getAttribute('id') === currency.abbreviation){
                 li.classList.add('disabled')
+                li.removeEventListener('click', addCurrencyToFavourites)
             }
         })
         
@@ -277,12 +278,12 @@ const updateFavouriteCurrenciesInputs = ev => {
     const newBaseCurrencyAmount = isNaN(ev.target.value) ? 0 : Number(ev.target.value)
  
     if(baseCurrencyAmount !== newBaseCurrencyAmount) {
-        baseCurrencyAmount = newBaseCurrencyAmount;
+        baseCurrencyAmount = newBaseCurrencyAmount
         document.querySelectorAll('.favourite').forEach(favouriteLI => {
-            if(favouriteLI.id!==baseCurrency) {
-                const currencyRate = currencies.find(currency => currency.abbreviation === favouriteLI.id).rate;
-                const exchangeRate = favouriteLI.id===baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4);
-                favouriteLI.querySelector('.input input').value = exchangeRate*baseCurrencyAmount!==0 ? (exchangeRate*baseCurrencyAmount).toFixed(2) : '';
+            if(favouriteLI.id !== baseCurrency) {
+                const currencyRate = currencies.find(currency => currency.abbreviation === favouriteLI.id).rate
+                const exchangeRate = favouriteLI.id === baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4)
+                favouriteLI.querySelector('.input input').value = exchangeRate*baseCurrencyAmount !== 0 ? (exchangeRate * baseCurrencyAmount).toFixed(2) : ''
             }
         })
     }

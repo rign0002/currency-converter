@@ -1,6 +1,6 @@
 'use strict'
 
-import currencies from './currencies.js';
+import currencies from './currencies.js'
 
 
 document.addEventListener('DOMContentLoaded', init)
@@ -14,6 +14,7 @@ function init() {
 const addEventListeners = () => {
     document.querySelector('#first-btn').addEventListener('click', clickFirstBtn)
     document.querySelector('#second-btn').addEventListener('click', clickSecondBtn)
+    document.querySelectorAll('.input-form').forEach(input => input.addEventListener('input', updateInputs))
 }
 
 const clickFirstBtn = ev => {
@@ -49,6 +50,7 @@ const populateCurrencies = (ev, btn) => {
     
     currencies.forEach(currency => {
         const li = document.createElement('li')
+        li.setAttribute('data-currency', currency.abbreviation)
         li.className = 'currency-li'
         li.addEventListener('click', setCurrency)
         if(currency.name === currenciesBtn[0] || currency.name === currenciesBtn[1]){
@@ -87,6 +89,7 @@ const setCurrency = ev => {
     
     btn.classList.toggle('open')
     
+    clearInput()
     deleteButton(btn)
     
     const i = document.createElement('i')
@@ -104,18 +107,54 @@ const setCurrency = ev => {
     span2.className = 'btn-currency-name'
     span2.innerHTML = name
     
+    btn.setAttribute('data-currency', li.getAttribute('data-currency'))
+    
     btn.appendChild(i)
     btn.appendChild(img)
     btn.appendChild(span1)
     btn.appendChild(span2)
     
     
+//    getExchangeRates()
+}
+
+//const getExchangeRates = () => {
+//    const currencySymbols = document.querySelectorAll('.btn-currency-symbol')
+//    const first = currencySymbols[0].innerHTML.substring(0, 3)
+//    const second = currencySymbols[1].innerHTML.substring(0, 3)
+//    
+//    const url = `https://api.exchangeratesapi.io/latest?base=${first}&symbols=${first},${second}`
+//    
+//    fetch(url)
+//    .then(resp => resp.json())
+//    .then(data => {
+//        console.log(data.rates)
+//        console.log(currencies)
+//    })
+//}
+
+const updateInputs = ev => {
+    const btns = document.querySelectorAll('.btn-form')
+    const inputs = document.querySelectorAll('.input-form')
     
+    const baseCurrencyRate = currencies.find(c => c.abbreviation === btns[0].getAttribute('data-currency')).rate
+    const currencyRate = currencies.find(currency => currency.abbreviation === btns[1].getAttribute('data-currency')).rate
+    const exchangeRate = Number(currencyRate/baseCurrencyRate).toFixed(4)
+    
+    inputs[1].value = exchangeRate * inputs[0].value
+
+    console.log(exchangeRate)
+
 }
 
 const deleteItems = elem => {
     while(elem.hasChildNodes())
         elem.removeChild(elem.querySelector('li'))
+}
+
+const clearInput = () => {
+   document.querySelector('#second-input').value = ''
+    updateInputs()
 }
 
 const deleteButton = btn => {

@@ -55,6 +55,7 @@ body {
 /***********************
         Main
 ***********************/
+
 .content {
     width: 85%;
     margin: auto;
@@ -70,10 +71,176 @@ body {
     font-size: var(--fontSeven);
 }
 
+#exchange-header {
+    text-align: center;
+    color: white;
+    font-size: var(--fontThree);
+    text-shadow: 0px 0px 5px hsl(75deg, 50%, 50%);
+}
+
+.exchange {
+    min-height: 150px;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: hsl(75deg 0% 30%);
+    border-radius: 5px;
+}
+
+.exchange-form {
+    padding: 15px 0;
+    display: flex;
+}
+
+.div-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    position: relative;
+}
+
+.text-form {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fontTwo);
+    color: hsl(75deg, 100%, 45%);
+    text-align: center;
+}
+
+.text-form i {
+    height: 50px;
+}
+
+.text-form p {
+    margin-top: 10px;
+    height: 50px;
+}
+
+.btn-form {
+    padding: 5px;
+    border-radius: 5px;
+    border: 3px solid hsl(75deg, 100%, 45%);
+    cursor: pointer;
+    font-size: var(--fontFive);
+    position: relative;
+    height: 50px;
+}
+
+.btn-img {
+    border-radius: 5px;
+    border: 1px solid rgb(150, 150, 150);
+    height: 33px;
+    width: 60px;
+    float: left;
+}
+
+.btn-currency-symbol {
+    font-size: var(--fontSeven);
+    vertical-align: top;
+}
+
+.btn-currency-name {
+    font-size: var(--fontSeven);
+    display: block;
+    transform: translateY(-4px);
+}
+
+.fa-angle-down {
+    position: absolute;
+    right: 3px;
+    color: rgb(50, 50, 50);
+}
+
+.fa-angle-down:hover {
+    color: rgb(175, 175, 175);
+}
+
+.fa-long-arrow-alt-right:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.fa-long-arrow-alt-right,
+.fa-long-arrow-alt-right:before,
+.fa-long-arrow-alt-right:after {
+    transition: all 0.25s;
+}
+
+.input-form {
+    margin-top: 20px;
+    padding: 2%;
+    font-size: var(--fontFour);
+    border-radius: 5px;
+    border: 3px solid hsl(75deg, 100%, 45%);
+    background: transparent;
+    color: white;
+    height: 50px;
+}
+
+.currency-list {
+    list-style-type: none;
+    position: absolute;
+    top: 42%;
+    width: 100%;
+    max-height: 300px;
+    transition: all 0.3s;
+    background-color: rgb(241, 241, 241);
+    height: 0;
+    overflow-y: auto;
+    opacity: 0;
+    transform: all 0.25s;
+}
+
+.currency-li {
+    display: grid;
+    border-radius: 1px;
+    grid-template-columns: 35% 65%;
+    grid-template-areas: "a b" "a c";
+    padding: 2%;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    color: rgb(75, 75, 75);
+}
+
+.currency-li:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200); 
+}
+
+.btn-form.open + .currency-list {
+    opacity: 1; 
+    height: 300px;
+}
+
+.currency-list-img {
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid white;
+    grid-area: a;
+}
+
+.currency-abbreviation {
+    font-size: var(--fontSeven);
+    grid-area: b;
+}
+
+.currency-full-name {
+    font-size: var(--fontSeven);
+    grid-area: c;
+}
+
+
+/***********************
+        Favourites
+***********************/
+
 #favourites-header {
     color: white;
     text-align: center;
+    margin-top: 7%;
     margin-bottom: 3%;
+    font-size: var(--fontFour);
 }
 
 .background {
@@ -291,160 +458,6 @@ body {
     cursor: pointer;
     background-color: hsl(75deg, 20%, 30%);
 }
-
-
-/***********************
-        Exchange
-***********************/
-#exchange-header {
-    text-align: center;
-    color: white;
-    margin-top: 7%;
-    font-size: var(--fontThree);
-    text-shadow: 0px 0px 5px hsl(75deg, 50%, 50%);
-}
-
-.exchange {
-    min-height: 150px;
-    width: 90%;
-    margin: auto;
-    margin-top: 5%;
-    background-color: hsl(75deg 0% 30%);
-    border-radius: 5px;
-}
-
-.exchange-form {
-    padding: 15px 0;
-    display: flex;
-}
-
-.div-form {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin: auto;
-    position: relative;
-}
-
-.text-form {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--fontTwo);
-    color: hsl(75deg, 100%, 45%);
-    text-align: center;
-}
-
-.text-form i {
-    height: 50px;
-}
-
-.text-form p {
-    margin-top: 10px;
-    height: 50px;
-}
-
-.btn-form {
-    padding: 5px;
-    border-radius: 5px;
-    border: 3px solid hsl(75deg, 100%, 45%);
-    cursor: pointer;
-    font-size: var(--fontFive);
-    position: relative;
-    height: 50px;
-}
-
-.btn-img {
-    border-radius: 5px;
-    border: 1px solid rgb(150, 150, 150);
-    height: 33px;
-    width: 60px;
-    float: left;
-}
-
-.btn-currency-symbol {
-    font-size: var(--fontSeven);
-    vertical-align: top;
-}
-
-.btn-currency-name {
-    font-size: var(--fontSeven);
-    display: block;
-    transform: translateY(-4px);
-}
-
-.fa-angle-down {
-    position: absolute;
-    right: 3px;
-    color: rgb(50, 50, 50);
-}
-
-.fa-angle-down:hover {
-    color: rgb(175, 175, 175);
-}
-
-.input-form {
-    margin-top: 20px;
-    padding: 2%;
-    font-size: var(--fontFour);
-    border-radius: 5px;
-    border: 3px solid hsl(75deg, 100%, 45%);
-    background: transparent;
-    color: white;
-    height: 50px;
-}
-
-.currency-list {
-    list-style-type: none;
-    position: absolute;
-    top: 42%;
-    width: 100%;
-    max-height: 300px;
-    transition: all 0.3s;
-    background-color: rgb(241, 241, 241);
-    height: 0;
-    overflow-y: auto;
-    opacity: 0;
-    transform: all 0.25s;
-}
-
-.currency-li {
-    display: grid;
-    border-radius: 1px;
-    grid-template-columns: 35% 65%;
-    grid-template-areas: "a b" "a c";
-    padding: 2%;
-    border-bottom: 1px solid rgb(221, 221, 221);
-    color: rgb(75, 75, 75);
-}
-
-.currency-li:hover {
-    cursor: pointer;
-    background-color: rgb(200, 200, 200); 
-}
-
-.btn-form.open + .currency-list {
-    opacity: 1; 
-    height: 300px;
-}
-
-.currency-list-img {
-    width: 80%;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid white;
-    grid-area: a;
-}
-
-.currency-abbreviation {
-    font-size: var(--fontSeven);
-    grid-area: b;
-}
-
-.currency-full-name {
-    font-size: var(--fontSeven);
-    grid-area: c;
-}
-
 
 
 /***********************

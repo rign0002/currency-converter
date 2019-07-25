@@ -283,7 +283,7 @@ const updateFavouriteCurrenciesInputs = ev => {
             if(favouriteLI.id !== baseCurrency) {
                 const currencyRate = currencies.find(currency => currency.abbreviation === favouriteLI.id).rate
                 const exchangeRate = favouriteLI.id === baseCurrency ? 1 : (currencyRate/baseCurrencyRate).toFixed(4)
-                favouriteLI.querySelector('.input input').value = exchangeRate*baseCurrencyAmount !== 0 ? (exchangeRate * baseCurrencyAmount).toFixed(2) : ''
+                favouriteLI.querySelector('.input input').value = exchangeRate * baseCurrencyAmount !== 0 ? (exchangeRate * baseCurrencyAmount).toFixed(2) : ''
             }
         })
     }

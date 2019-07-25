@@ -12,9 +12,13 @@ function init() {
 
 
 const addEventListeners = () => {
+    const firstInput = document.querySelector('#first-input')
+    
     document.querySelector('#first-btn').addEventListener('click', clickFirstBtn)
     document.querySelector('#second-btn').addEventListener('click', clickSecondBtn)
-    document.querySelectorAll('.input-form').forEach(input => input.addEventListener('input', updateInputs))
+    firstInput.addEventListener('input', updateInputs)
+    firstInput.addEventListener('focusout', validateAndCleanInput)
+    firstInput.addEventListener('keydown', addEnterFunctionality)
 }
 
 const clickFirstBtn = ev => {
@@ -114,24 +118,7 @@ const setCurrency = ev => {
     btn.appendChild(span1)
     btn.appendChild(span2)
     
-    
-//    getExchangeRates()
 }
-
-//const getExchangeRates = () => {
-//    const currencySymbols = document.querySelectorAll('.btn-currency-symbol')
-//    const first = currencySymbols[0].innerHTML.substring(0, 3)
-//    const second = currencySymbols[1].innerHTML.substring(0, 3)
-//    
-//    const url = `https://api.exchangeratesapi.io/latest?base=${first}&symbols=${first},${second}`
-//    
-//    fetch(url)
-//    .then(resp => resp.json())
-//    .then(data => {
-//        console.log(data.rates)
-//        console.log(currencies)
-//    })
-//}
 
 const updateInputs = ev => {
     const btns = document.querySelectorAll('.btn-form')
@@ -141,7 +128,8 @@ const updateInputs = ev => {
     const currencyRate = currencies.find(currency => currency.abbreviation === btns[1].getAttribute('data-currency')).rate
     const exchangeRate = Number(currencyRate/baseCurrencyRate).toFixed(4)
     
-    inputs[1].value = exchangeRate * inputs[0].value
+    
+    inputs[1].value = exchangeRate * inputs[0].value !== 0 ? (exchangeRate * inputs[0].value).toFixed(4) : ''
 
     console.log(exchangeRate)
 
@@ -153,8 +141,23 @@ const deleteItems = elem => {
 }
 
 const clearInput = () => {
-   document.querySelector('#second-input').value = ''
+   document.querySelectorAll('.input-form').forEach(input => {
+       input.value = ''
+   })
     updateInputs()
+}
+
+const validateAndCleanInput = ev => {
+    const inputValue = ev.target.value
+    if (isNaN(inputValue) || Number(inputValue) === 0) {
+        ev.target.value = ''
+    } else {
+        ev.target.value = Number(inputValue).toFixed(4)
+    }
+}
+
+const addEnterFunctionality = ev => {
+    if(ev.key === 'Enter') ev.target.blur()
 }
 
 const deleteButton = btn => {

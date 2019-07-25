@@ -13,16 +13,6 @@
        </header>
        <main class="content">
            <p class="date"></p>
-           <h2 id="favourites-header">Favourites</h2>
-           <div class="background">
-               <ul id="favourites"></ul>
-               <button class="add-currency-btn"><i class="far fa-arrow-alt-circle-down"></i>Add Currency</button>
-               <ul class="add-currency-list">
-                   <div class="search-div">
-                       <input type="text" id="search-field" placeholder="Search Currency or Symbol"><i class="fas fa-search" id="search-button"></i>
-                   </div>
-               </ul>
-            </div>
             <h1 id="exchange-header">Quick Exchange</h1>
             <div class="exchange">
                <form class="exchange-form">
@@ -34,7 +24,7 @@
                             <span class="btn-currency-name">Euro</span>
                         </button>
                         <ul class="currency-list"></ul>
-                        <input type="number" class="input-form" placeholder="0.00" id="first-input">
+                        <input type="number" class="input-form" placeholder="0.0000" id="first-input">
                    </div>
                    <div class="text-form">
                        <i class="fas fa-long-arrow-alt-right"></i>
@@ -48,9 +38,19 @@
                             <span class="btn-currency-name">US Dollar</span>
                             </button>
                         <ul class="currency-list"></ul>
-                        <input type="number" class="input-form" placeholder="0.00" id="second-input">
+                        <input type="number" class="input-form" placeholder="0.0000" id="second-input" readonly>
                    </div>
                </form>
+            </div>
+           <h2 id="favourites-header">Favourites</h2>
+           <div class="background">
+               <ul id="favourites"></ul>
+               <button class="add-currency-btn"><i class="far fa-arrow-alt-circle-down"></i>Add Currency</button>
+               <ul class="add-currency-list">
+                   <div class="search-div">
+                       <input type="text" id="search-field" placeholder="Search Currency or Symbol"><i class="fas fa-search" id="search-button"></i>
+                   </div>
+               </ul>
             </div>
        </main>
         <footer>

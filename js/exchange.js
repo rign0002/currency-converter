@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', init)
 
 function init() {
     addEventListeners()
-    copyrightMessage()
 }
 
 
@@ -165,11 +164,4 @@ const deleteButton = btn => {
         btn.removeChild(btn.querySelector('.btn-img'))
         btn.removeChild(btn.querySelector('.btn-currency-symbol'))
         btn.removeChild(btn.querySelector('.btn-currency-name'))
-}
-
-const copyrightMessage = () => {
-    const date = new Date()
-    let year = date.getFullYear()
-    const copyrightTag = document.querySelector('#copyright')
-    copyrightTag.innerHTML = `&copy; Copyright ${year} Justin Rignault. All Rights Reserved`
 }

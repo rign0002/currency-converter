@@ -16,6 +16,7 @@ function init(){
     getExchangeRates()
     addEventListeners()
     populateAddCurrencyList()
+    copyrightMessage()
 }
 
 const getExchangeRates = () => {
@@ -313,4 +314,11 @@ const setBaseCurrency = ev => {
     baseCurrency = target.id
     localStorage.setItem('base-currency', JSON.stringify(baseCurrency))
     loadLocalStorage()
+}
+
+const copyrightMessage = () => {
+    const date = new Date()
+    let year = date.getFullYear()
+    const copyrightTag = document.querySelector('#copyright')
+    copyrightTag.innerHTML = `&copy; Copyright ${year} Justin Rignault. All Rights Reserved`
 }

@@ -9,12 +9,12 @@ function init() {
     addEventListeners()
 }
 
-
 const addEventListeners = () => {
     const firstInput = document.querySelector('#first-input')
     
     document.querySelector('#first-btn').addEventListener('click', clickFirstBtn)
     document.querySelector('#second-btn').addEventListener('click', clickSecondBtn)
+    document.querySelector('.fa-long-arrow-alt-right').addEventListener('click', switchCurrencies)
     firstInput.addEventListener('input', updateInputs)
     firstInput.addEventListener('focusout', validateAndCleanInput)
     firstInput.addEventListener('keydown', addEnterFunctionality)
@@ -117,6 +117,17 @@ const setCurrency = ev => {
     btn.appendChild(span1)
     btn.appendChild(span2)
     
+}
+
+const switchCurrencies = () => {
+    const btns = document.querySelectorAll('.btn-form')
+    const btnsText = []
+    
+    btnsText.push(btns[0].innerHTML)
+    btnsText.push(btns[1].innerHTML)
+    
+    btns[1].innerHTML = btnsText[0]
+    btns[0].innerHTML = btnsText[1]
 }
 
 const updateInputs = ev => {

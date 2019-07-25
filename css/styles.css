@@ -213,6 +213,7 @@ body {
 }
 
 .currency-list-img {
+    max-width: 100px;
     width: 80%;
     height: 40px;
     border-radius: 5px;

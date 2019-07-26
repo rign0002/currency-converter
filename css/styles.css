@@ -490,6 +490,13 @@ footer {
     .favourite {
         width: 95%;
     }
+    .currency-name {
+        font-size: var(--fontSix);
+    }
+
+    .base-currency-rate {
+        font-size: var(--fontSeven);
+    }
 }
 
 @media (max-width: 500px) {

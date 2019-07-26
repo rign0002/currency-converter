@@ -127,7 +127,7 @@ body {
     cursor: pointer;
     font-size: var(--fontFive);
     position: relative;
-    height: 50px;
+    height: 60px;
     background-color: white;
 }
 
@@ -168,7 +168,7 @@ body {
     border: 3px solid hsl(75deg, 100%, 45%);
     background: transparent;
     color: white;
-    height: 50px;
+    height: 60px;
 }
 
 .currency-list {

@@ -109,7 +109,10 @@ body {
 }
 
 .text-form i {
+    font-size: var(--fontThree);
     height: 50px;
+    padding-top: 8px;
+    cursor: pointer;
 }
 
 .text-form p {
@@ -154,17 +157,6 @@ body {
 
 .fa-angle-down:hover {
     color: rgb(175, 175, 175);
-}
-
-.fa-long-arrow-alt-right:hover {
-    cursor: pointer;
-    transform: rotate(180deg);
-}
-
-.fa-long-arrow-alt-right,
-.fa-long-arrow-alt-right:before,
-.fa-long-arrow-alt-right:after {
-    transition: all 0.25s;
 }
 
 .input-form {
@@ -332,7 +324,7 @@ body {
     text-align: right;
     margin-right: 1%;
     font-size: 1.5rem;
-    color: #666;
+    color: rgb(230, 230, 230);
     cursor: pointer;
 }
 

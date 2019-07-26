@@ -14,7 +14,7 @@ const addEventListeners = () => {
     
     document.querySelector('#first-btn').addEventListener('click', clickFirstBtn)
     document.querySelector('#second-btn').addEventListener('click', clickSecondBtn)
-    document.querySelector('.fa-long-arrow-alt-right').addEventListener('click', switchCurrencies)
+    document.querySelector('.fa-exchange-alt').addEventListener('click', switchCurrencies)
     firstInput.addEventListener('input', updateInputs)
     firstInput.addEventListener('focusout', validateAndCleanInput)
     firstInput.addEventListener('keydown', addEnterFunctionality)

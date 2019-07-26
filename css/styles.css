@@ -487,6 +487,9 @@ footer {
     .header h1 {
         font-size: var(--fontTwo);
     }
+    .favourite {
+        width: 95%;
+    }
 }
 
 @media (max-width: 500px) {
@@ -495,9 +498,6 @@ footer {
     }
     .text-form {
         margin-top: 8px;
-    }
-    .favourite {
-        width: 95%;
     }
 }
 

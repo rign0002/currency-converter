@@ -176,13 +176,14 @@ body {
     position: absolute;
     top: 42%;
     width: 100%;
-    max-height: 300px;
+    max-height: 550px;
     transition: all 0.3s;
     background-color: rgb(241, 241, 241);
     height: 0;
     overflow-y: auto;
     opacity: 0;
     transform: all 0.25s;
+    z-index: 101;
 }
 
 .currency-li {

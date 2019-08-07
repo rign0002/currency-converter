@@ -122,15 +122,26 @@ const setCurrency = ev => {
 const switchCurrencies = () => {
     const btns = document.querySelectorAll('.btn-form')
     const btnsText = []
+    const btnsAttr = []
     
     btnsText.push(btns[0].innerHTML)
     btnsText.push(btns[1].innerHTML)
     
+    btnsAttr.push(btns[0].getAttribute('data-currency'))
+    btnsAttr.push(btns[1].getAttribute('data-currency'))
+    
+    console.log(btnsAttr)
+    
     btns[1].innerHTML = btnsText[0]
+    btns[1].setAttribute('data-currency', btnsAttr[0])
+    
     btns[0].innerHTML = btnsText[1]
+    btns[0].setAttribute('data-currency', btnsAttr[1])
+    
+    updateInputs()
 }
 
-const updateInputs = ev => {
+const updateInputs = () => {
     const btns = document.querySelectorAll('.btn-form')
     const inputs = document.querySelectorAll('.input-form')
     
@@ -141,7 +152,6 @@ const updateInputs = ev => {
     
     inputs[1].value = exchangeRate * inputs[0].value !== 0 ? (exchangeRate * inputs[0].value).toFixed(4) : ''
 
-    console.log(exchangeRate)
 
 }
 

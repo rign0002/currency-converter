@@ -1,9 +1,16 @@
+/***************************************************************************
+Filename: currencies.js
+Author: Justin Rignault
+Description: main currency file for other JS files to get data
+Date: August 12th 2019
+****************************************************************************/
+
 const currencies = [
   {
     name: 'US Dollar',
     abbreviation: 'USD',
     symbol: '&#36;',
-    flag: '/currency-converter/img/us.gif' // /currency-converter/img/us.gif
+    flag: '/currency-converter/img/us.gif'
   },
   {
     name: 'Euro',

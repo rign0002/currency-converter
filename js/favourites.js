@@ -1,3 +1,10 @@
+/***************************************************************************
+Filename: favourites.js
+Author: Justin Rignault
+Description: main js file linked to index.html with functionality to the favourites section of the page
+Date: August 12th 2019
+****************************************************************************/
+
 'use strict'
 
 import currencies from './currencies.js'
